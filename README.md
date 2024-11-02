@@ -4,6 +4,12 @@ Janim is a Maths animation library inspired by Manim.
 
 ## Installation
 
+Prerequisites: g++, texlive, texlive-latex-extra, texlive-luatex
+
+```bash
+sudo apt-get install build-essential texlive texlive-latex-extra texlive-luatex
+```
+
 To install Janim, follow these steps:
 
 1. Clone the repository:
