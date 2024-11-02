@@ -1,17 +1,29 @@
+// Janim Version 0.0.1 (g++ 13.2.0)
+
+// Jan Maths animation library, inspired by Manim
+
+// Jan Dalhuysen
+
 #include <iostream>
 #include <string>
 #include <vector>
+
 #include <fstream>
 
 using namespace std;
 
 string janim_version = "Janim Version 0.0.1 (g++ 13.2.0)";
+
 string janim_mode = "Document";
+
 string janim_page_orientation = "Landscape";
+
 string janim_page_height = "108mm";
 string janim_page_width = "192mm";
+
 string janim_top_margin = "20mm";
 string janim_left_margin = "20mm";
+
 string janim_page_color = "black";
 string janim_text_color = "white";
 

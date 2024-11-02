@@ -30,13 +30,6 @@ int main()
     janim_line("0mm", "0mm", "5mm", "5mm", "cyan");
     janim_line("0mm", "5mm", "5mm", "0mm", "cyan");
 
-    janim_line("0mm", "0mm", "5mm", "5mm", "cyan");
-    janim_line("0mm", "5mm", "5mm", "0mm", "cyan");
-
-    janim_line("0mm", "0mm", "5mm", "5mm", "cyan");
-    janim_line("0mm", "5mm", "5mm", "0mm", "cyan");
-
-
     janim_circle("10mm", "10mm", "10mm", "red", "60", "blue", "20");
     janim_circle("10mm", "10mm", "10mm", "green", "60", "yellow", "20");
 
