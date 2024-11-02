@@ -23,6 +23,8 @@ int main()
     janim_set_page_height("108mm");
     janim_set_page_width("192mm");
 
+    janim_set_main_font("CascadiaMono.ttf");
+
     janim_create_document();
 
     janim_text("Hallo World");

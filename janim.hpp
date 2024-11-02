@@ -27,6 +27,8 @@ string janim_left_margin = "20mm";
 string janim_page_color = "black";
 string janim_text_color = "white";
 
+string janim_main_font = "CascadiaMono.ttf";
+
 int janim_print_version()
 {
     cout << janim_version << endl;
@@ -89,6 +91,12 @@ int janim_set_page_color(string color)
     return 0;
 }
 
+int janim_set_main_font(string font)
+{
+    janim_main_font = font;
+    return 0;
+}
+
 #pragma endregion
 
 int janim_create_document()
@@ -119,7 +127,7 @@ int janim_create_document()
 
     document << "\\usepackage{fontspec}" << endl;
     document << "\\usepackage{xcolor}" << endl;
-    document << "\\setmainfont{jan.ttf}" << endl;
+    document << "\\setmainfont{" << janim_main_font << "}" << endl;
     document << "\\pagenumbering{gobble}" << endl;
     document << "\\pagecolor{" << janim_page_color << "}" << endl;
     document << "\\hyphenpenalty 10000" << endl;
