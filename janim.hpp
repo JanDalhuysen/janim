@@ -220,7 +220,7 @@ int janim_render()
     if (janim_mode == "Document")
     {
         cout << "Rendering document" << endl;
-        system("lualatex -quiet document.tex");
+        system("lualatex document.tex");
     }
     else if (janim_mode == "Presentation")
     {
