@@ -195,6 +195,26 @@ int janim_rectangle(string x = "10mm", string y = "10mm", string width = "20mm",
     return 0;
 }
 
+int janim_triangle(string x = "10mm", string y = "10mm", string side_length = "10mm", string outline_color = "white", string outline_color_percentage = "60", string fill_color = "black", string fill_color_percentage = "20")
+{
+    ofstream document("document.tex", ios::app);
+    document << "\\begin{tikzpicture}" << endl;
+    document << "\\filldraw[color=" << outline_color << "!" << outline_color_percentage << ", fill=" << fill_color << "!" << fill_color_percentage << ", very thick](" << x << "," << y << ") -- (" << x << "+" << side_length << "," << y << ") -- (" << x << "+" << side_length << "/2," << y << "+" << side_length << ") -- cycle;" << endl;
+    document << "\\end{tikzpicture}" << endl;
+    document.close();
+    return 0;
+}
+
+int janim_oval(string x = "10mm", string y = "10mm", string x_radius = "10mm", string y_radius = "5mm", string outline_color = "white", string outline_color_percentage = "60", string fill_color = "black", string fill_color_percentage = "20")
+{
+    ofstream document("document.tex", ios::app);
+    document << "\\begin{tikzpicture}" << endl;
+    document << "\\filldraw[color=" << outline_color << "!" << outline_color_percentage << ", fill=" << fill_color << "!" << fill_color_percentage << ", very thick](" << x << "," << y << ") ellipse (" << x_radius << " and " << y_radius << ");" << endl;
+    document << "\\end{tikzpicture}" << endl;
+    document.close();
+    return 0;
+}
+
 int janim_render()
 {
     if (janim_mode == "Document")
