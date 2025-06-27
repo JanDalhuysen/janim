@@ -39,6 +39,12 @@ int main()
 
     janim_rectangle("10mm", "10mm", "20mm", "10mm", "red", "60", "blue", "20");
 
+    // Draw a triangle
+    janim_triangle("15mm", "15mm", "10mm", "orange", "70", "yellow", "30");
+
+    // Draw an oval
+    janim_oval("25mm", "25mm", "15mm", "8mm", "purple", "70", "pink", "30");
+
     janim_end_document();
     janim_render();
 }
