@@ -2,6 +2,31 @@
 
 Janim is a Maths animation library inspired by Manim.
 
+## Features
+
+Current features include:
+- Drawing basic shapes (circles, squares, rectangles, triangles, ovals)
+- Customizable colors and fill percentages
+- Creating LaTeX documents with TikZ
+- Setting page properties (color, orientation, dimensions)
+- Text rendering
+- Document creation and finalization
+- Rendering documents to PDF
+
+## TODO
+
+Potential future improvements:
+1. Add more shapes (arrows, polygons, etc.)
+2. Implement animation capabilities
+3. Add support for gradients and patterns
+4. Include transformation functions (rotation, scaling)
+5. Add text styling options (font size, bold, italic)
+6. Implement grouping of objects
+7. Add support for Bezier curves
+8. Include pre-defined color palettes
+9. Add command-line arguments for rendering options
+10. Improve error handling and input validation
+
 ## Installation
 
 Prerequisites: g++, texlive, texlive-latex-extra, texlive-luatex
