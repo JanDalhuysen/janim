@@ -21,6 +21,9 @@ string janim_mode = "Document";
 
 string janim_page_orientation = "Landscape";
 
+string janim_title = "";
+string janim_author = "";
+
 string janim_page_height = "108mm";
 string janim_page_width = "192mm";
 
@@ -100,6 +103,18 @@ int janim_set_main_font(string font)
     return 0;
 }
 
+int janim_set_title(string title)
+{
+    janim_title = title;
+    return 0;
+}
+
+int janim_set_author(string author)
+{
+    janim_author = author;
+    return 0;
+}
+
 #pragma endregion
 
 int janim_create_document()
@@ -107,6 +122,14 @@ int janim_create_document()
     ofstream document("document.tex");
 
     document << "\\documentclass{article}" << endl;
+    
+    if (!janim_title.empty()) {
+        document << "\\title{" << janim_title << "}" << endl;
+    }
+    
+    if (!janim_author.empty()) {
+        document << "\\author{" << janim_author << "}" << endl;
+    }
     document << "\\usepackage{tikz}" << endl;
     document << "\\usepackage{geometry}" << endl;
     document << "\\geometry{" << endl;
