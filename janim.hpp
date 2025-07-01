@@ -10,7 +10,7 @@
 
 #include <fstream>
 
-#include "janim_automata.hpp"
+// Moved below to avoid circular dependency
 
 using namespace std;
 

@@ -7,7 +7,12 @@
 #include <vector>
 #include <map>
 #include <cmath>
-#include "janim.hpp"
+
+#include "janim_automata.hpp"
+// Forward declaration to break circular dependency
+struct Automaton;
+
+// Include janim.hpp only where needed later
 
 using namespace std;
 
