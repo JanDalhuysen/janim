@@ -10,6 +10,8 @@
 
 #include <fstream>
 
+struct Automaton;
+
 using namespace std;
 
 string janim_version = "Janim Version 0.0.1 (g++ 13.2.0)";
