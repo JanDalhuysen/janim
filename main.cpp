@@ -44,6 +44,18 @@ int main()
 
     // Draw an oval
     janim_oval("25mm", "25mm", "15mm", "8mm", "purple", "70", "pink", "30");
+    
+    // Example automaton
+    Automaton automaton;
+    janim_parse_automaton(R"(
+        [initial:q0]
+        q0 -> q1 [label=a];
+        q1 -> q2 [label=b];
+        q2 [final];
+        q2 -> q1 [label=c];
+    )", automaton);
+    janim_layout_automaton(automaton);
+    janim_draw_automaton(automaton);
 
     janim_end_document();
     janim_render();

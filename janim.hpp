@@ -232,3 +232,8 @@ int janim_render()
     }
     return 0;
 }
+
+// Automata layout functions
+int janim_parse_automaton(const string& description, Automaton& automaton);
+int janim_layout_automaton(Automaton& automaton, double start_x = 0, double start_y = 0);
+int janim_draw_automatonaton(Automaton& automaton);
