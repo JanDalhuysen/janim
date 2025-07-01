@@ -175,7 +175,8 @@ int janim_end_document()
 int janim_text(string text)
 {
     ofstream document("document.tex", ios::app);
-    document << "\\noindent \\textcolor{white}" << endl;
+    string text_color = (janim_page_color == "black") ? "white" : "black";
+    document << "\\noindent \\textcolor{" << text_color << "}" << endl;
     document << "{" << text << "}" << endl;
     document.close();
     return 0;
