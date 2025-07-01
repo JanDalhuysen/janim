@@ -10,7 +10,7 @@
 
 #include <fstream>
 
-struct Automaton;
+#include "janim_automata.hpp"
 
 using namespace std;
 
