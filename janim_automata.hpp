@@ -8,7 +8,6 @@
 #include <map>
 #include <cmath>
 
-#include "janim_automata.hpp"
 // Forward declaration to break circular dependency
 struct Automaton;
 
@@ -248,12 +247,3 @@ int janim_draw_automaton(Automaton& automaton)
     document.close();
     return 0;
 }
-````
-````
-
-janim.hpp
-````
-<<<<<<< SEARCH
-#include <fstream>
-
-using namespace std;

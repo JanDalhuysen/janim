@@ -11,6 +11,7 @@
 #include <fstream>
 
 // Moved below to avoid circular dependency
+#include "janim_automata.hpp"
 
 using namespace std;
 
@@ -235,7 +236,4 @@ int janim_render()
     return 0;
 }
 
-// Automata layout functions
-int janim_parse_automaton(const string& description, Automaton& automaton);
-int janim_layout_automaton(Automaton& automaton);
-int janim_draw_automaton(Automaton& automaton);
+// Automata layout functions - forward declarations only
