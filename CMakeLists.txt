@@ -11,19 +11,7 @@ add_executable(${PROJECT_NAME} main.cpp)
 # Include directories
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
-# Link libraries
-find_package(JUCE REQUIRED)
-
-target_link_libraries(${PROJECT_NAME} 
-    PRIVATE 
-        JUCE::Core 
-        JUCE::GUI 
-        JUCE::Image 
-        JUCE::Pdf 
-        JUCE::Platform 
-        JUCE::OpenGL 
-        JUCE::Freetype
-)
+# No external libraries needed for this simple program
 
 # Set output directory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
