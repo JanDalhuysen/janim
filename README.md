@@ -18,21 +18,21 @@ Current features include:
 ## TODO
 
 Potential future improvements:
-1. Add more shapes (arrows, polygons, etc.)
-2. Implement animation capabilities
-3. Add support for gradients and patterns
-4. Include transformation functions (rotation, scaling)
-5. Add text styling options (font size, bold, italic)
-6. Implement grouping of objects
-7. Add support for Bezier curves
-8. Include pre-defined color palettes
-9. Add command-line arguments for rendering options
-10. Improve error handling and input validation
-11. Add support for automatic layout of mathematical diagrams
-12. Implement more sophisticated text formatting with LaTeX math mode
-13. Add support for 3D shapes and scenes
-14. Implement a GUI for creating animations
-15. Add audio support for animations
+- [ ] Add more shapes (arrows, polygons, etc.)
+- [ ] Implement animation capabilities
+- [ ] Add support for gradients and patterns
+- [ ] Include transformation functions (rotation, scaling)
+- [ ] Add text styling options (font size, bold, italic)
+- [ ] Implement grouping of objects
+- [ ] Add support for Bezier curves
+- [ ] Include pre-defined color palettes
+- [ ] Add command-line arguments for rendering options
+- [ ] Improve error handling and input validation
+- [ ] Add support for automatic layout of mathematical diagrams
+- [ ] Implement more sophisticated text formatting with LaTeX math mode
+- [ ] Add support for 3D shapes and scenes
+- [ ] Implement a GUI for creating animations
+- [ ] Add audio support for animations
 
 ## Installation
 
