@@ -13,6 +13,7 @@ Current features include:
 - Document creation and finalization
 - Rendering documents to PDF
 - Custom title page creation with janim_make_title (sets title, author, and date automatically)
+- Automatic layout and drawing of automata from a simple description language
 
 ## TODO
 
@@ -29,6 +30,9 @@ Potential future improvements:
 10. Improve error handling and input validation
 11. Add support for automatic layout of mathematical diagrams
 12. Implement more sophisticated text formatting with LaTeX math mode
+13. Add support for 3D shapes and scenes
+14. Implement a GUI for creating animations
+15. Add audio support for animations
 
 ## Installation
 
