@@ -35,7 +35,7 @@ Prerequisites: g++, texlive, texlive-latex-extra, texlive-luatex
 sudo apt-get install build-essential texlive texlive-latex-extra texlive-luatex
 ```
 
-To install Janim, follow these steps:
+To install Janim using CMake, follow these steps:
 
 1. Clone the repository:
    ```
@@ -45,9 +45,17 @@ To install Janim, follow these steps:
    ```
    cd janim
    ```
-3. Compile the project:
+3. Create a build directory and navigate into it:
    ```
-   g++ main.cpp -o main
+   mkdir build && cd build
+   ```
+4. Run CMake to configure the project:
+   ```
+   cmake ..
+   ```
+5. Compile the project:
+   ```
+   cmake --build .
    ```
 
 ## Usage
