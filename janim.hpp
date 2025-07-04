@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <ctime> // For time and localtime_s
 
 #include <fstream>
 
