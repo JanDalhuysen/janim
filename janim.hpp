@@ -109,6 +109,42 @@ int janim_set_title(string title)
     return 0;
 }
 
+int janim_make_title(string title, string subtitle = "", string author = "", string date = "")
+{
+    ofstream document("document.tex", ios::app);
+    
+    // If date is empty, use current date
+    if (date.empty()) {
+        time_t now = time(0);
+        tm ltm;
+        localtime_s(&ltm, &now);
+        date = to_string(1900 + ltm.tm_year) + "-" + 
+               to_string(1 + ltm.tm_mon) + "-" + 
+               to_string(ltm.tm_mday);
+    }
+    
+    // Write title page content
+    document << "\\begin{titlepage}" << endl;
+    document << "\\centering" << endl;
+    document << "\\vspace*{2cm}" << endl;
+    document << "\\Huge\\textcolor{" << janim_text_color << "}{\\textbf{" << title << "}}\\par" << endl;
+    if (!subtitle.empty()) {
+        document << "\\vspace{1cm}" << endl;
+        document << "\\LARGE\\textcolor{" << janim_text_color << "}{\\textbf{" << subtitle << "}}\\par" << endl;
+    }
+    document << "\\vspace{2cm}" << endl;
+    if (!author.empty()) {
+        document << "\\Large\\textcolor{" << janim_text_color << "}{\\textbf{By " << author << "}}\\par" << endl;
+        document << "\\vspace{1cm}" << endl;
+    }
+    document << "\\textcolor{" << janim_text_color << "}{" << date << "}\\par" << endl;
+    document << "\\vfill" << endl;
+    document << "\\end{titlepage}" << endl;
+    
+    document.close();
+    return 0;
+}
+
 int janim_set_author(string author)
 {
     janim_author = author;

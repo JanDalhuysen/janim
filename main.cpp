@@ -19,6 +19,9 @@ int main()
     janim_set_mode("Document");
     janim_set_page_color("black");
     janim_set_page_orientation("Landscape");
+    
+    // Create a title page
+    janim_make_title("Janim Document", "A Mathematical Animation Example", "John Doe", "2025-07-04");
 
     janim_set_page_height("108mm");
     janim_set_page_width("192mm");
