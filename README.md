@@ -12,6 +12,7 @@ Current features include:
 - Text rendering
 - Document creation and finalization
 - Rendering documents to PDF
+- Custom title page creation with janim_make_title (sets title, author, and date automatically)
 
 ## TODO
 
@@ -26,6 +27,8 @@ Potential future improvements:
 8. Include pre-defined color palettes
 9. Add command-line arguments for rendering options
 10. Improve error handling and input validation
+11. Add support for automatic layout of mathematical diagrams
+12. Implement more sophisticated text formatting with LaTeX math mode
 
 ## Installation
 
