@@ -1,9 +1,11 @@
 \documentclass{article}
+\title{Janim Document}
+\author{John Doe}
 \usepackage{tikz}
 \usepackage{geometry}
 \geometry{
-paperheight=108mm,paperwidth=192mm,
-total={152mm,68mm},
+paperheight=768mm,paperwidth=432mm,
+total={728mm,392mm},
 left=20mm,
 top=20mm,
 }
@@ -11,11 +13,12 @@ top=20mm,
 \usepackage{xcolor}
 \setmainfont{CascadiaMono.ttf}
 \pagenumbering{gobble}
-\pagecolor{black}
+\pagecolor{white}
 \hyphenpenalty 10000
 \exhyphenpenalty 10000
 \begin{document}
-\noindent \textcolor{white}
+\maketitle
+\noindent \textcolor{black}
 {Hallo World}
 \begin{tikzpicture}
 \draw[color=cyan, very thick] (0mm,0mm)--(5mm,5mm);

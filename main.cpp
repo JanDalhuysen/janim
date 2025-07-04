@@ -17,14 +17,14 @@ int main()
     cout << janim_version << endl;
 
     janim_set_mode("Document");
-    janim_set_page_color("black");
-    janim_set_page_orientation("Landscape");
-    
+    janim_set_page_color("white");
+    janim_set_page_orientation("Portrait");
+
     // Create a title page
     janim_make_title("Janim Document", "A Mathematical Animation Example", "John Doe", "2025-07-04");
 
-    janim_set_page_height("108mm");
-    janim_set_page_width("192mm");
+    janim_set_page_height("432mm");
+    janim_set_page_width("768mm");
 
     janim_set_main_font("CascadiaMono.ttf");
 
@@ -47,7 +47,7 @@ int main()
 
     // Draw an oval
     janim_oval("25mm", "25mm", "15mm", "8mm", "purple", "70", "pink", "30");
-    
+
     // Example automaton
     Automaton automaton;
     janim_parse_automaton(R"(
@@ -56,7 +56,8 @@ int main()
         q1 -> q2 [label=b];
         q2 [final];
         q2 -> q1 [label=c];
-    )", automaton);
+    )",
+                          automaton);
     janim_layout_automaton(automaton);
     janim_draw_automaton(automaton);
 

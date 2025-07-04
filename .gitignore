@@ -1,5 +1,7 @@
 .vscode/
 document.aux
 document.log
+document.fdb_latexmk
+document.fls
 .aider*
 /build/

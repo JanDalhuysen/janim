@@ -112,37 +112,26 @@ int janim_set_title(string title)
 
 int janim_make_title(string title, string subtitle = "", string author = "", string date = "")
 {
-    ofstream document("document.tex", ios::app);
-    
+    // Update global variables for title, author, and date
+    janim_title = title;
+    janim_author = author;
+
     // If date is empty, use current date
-    if (date.empty()) {
+    if (date.empty())
+    {
         time_t now = time(0);
         tm ltm;
         localtime_s(&ltm, &now);
-        date = to_string(1900 + ltm.tm_year) + "-" + 
-               to_string(1 + ltm.tm_mon) + "-" + 
+        date = to_string(1900 + ltm.tm_year) + "-" +
+               to_string(1 + ltm.tm_mon) + "-" +
                to_string(ltm.tm_mday);
     }
-    
-    // Write title page content
-    document << "\\begin{titlepage}" << endl;
-    document << "\\centering" << endl;
-    document << "\\vspace*{2cm}" << endl;
-    document << "\\Huge\\textcolor{" << janim_text_color << "}{\\textbf{" << title << "}}\\par" << endl;
-    if (!subtitle.empty()) {
-        document << "\\vspace{1cm}" << endl;
-        document << "\\LARGE\\textcolor{" << janim_text_color << "}{\\textbf{" << subtitle << "}}\\par" << endl;
-    }
-    document << "\\vspace{2cm}" << endl;
-    if (!author.empty()) {
-        document << "\\Large\\textcolor{" << janim_text_color << "}{\\textbf{By " << author << "}}\\par" << endl;
-        document << "\\vspace{1cm}" << endl;
-    }
-    document << "\\textcolor{" << janim_text_color << "}{" << date << "}\\par" << endl;
-    document << "\\vfill" << endl;
-    document << "\\end{titlepage}" << endl;
-    
-    document.close();
+
+    // Store subtitle and date in global variables if needed
+    // (You may want to add global variables for subtitle and date if you want to use them in the document)
+    // For now, just update the title and author, and rely on \maketitle in janim_create_document
+
+    // Optionally, you could add subtitle/date handling here if you extend the LaTeX preamble
     return 0;
 }
 
@@ -159,14 +148,17 @@ int janim_create_document()
     ofstream document("document.tex");
 
     document << "\\documentclass{article}" << endl;
-    
-    if (!janim_title.empty()) {
+
+    if (!janim_title.empty())
+    {
         document << "\\title{" << janim_title << "}" << endl;
     }
-    
-    if (!janim_author.empty()) {
+    if (!janim_author.empty())
+    {
         document << "\\author{" << janim_author << "}" << endl;
     }
+    // Optionally, add date if you want to support it
+    // document << "\\date{" << janim_date << "}" << endl;
     document << "\\usepackage{tikz}" << endl;
     document << "\\usepackage{geometry}" << endl;
     document << "\\geometry{" << endl;
@@ -196,7 +188,10 @@ int janim_create_document()
     document << "\\hyphenpenalty 10000" << endl;
     document << "\\exhyphenpenalty 10000" << endl;
     document << "\\begin{document}" << endl;
-
+    if (!janim_title.empty())
+    {
+        document << "\\maketitle" << endl;
+    }
     document.close();
     return 0;
 }
