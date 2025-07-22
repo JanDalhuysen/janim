@@ -292,4 +292,81 @@ int janim_render()
     return 0;
 }
 
+int janim_export(string filetype = "png", int dpi = 300)
+{
+    // Export the rendered document to various file formats using Ghostscript
+    cout << "Exporting to " << filetype << " with DPI: " << dpi << endl;
+    
+    string input_file = "document.pdf";
+    string output_file = "document." + filetype;
+    string device;
+    string command;
+    
+    // Determine the Ghostscript device based on the requested file type
+    if (filetype == "png")
+    {
+        device = "png16m";  // 24-bit PNG
+    }
+    else if (filetype == "jpeg" || filetype == "jpg")
+    {
+        device = "jpeg";    // JPEG format
+        if (filetype == "jpg") output_file = "document.jpg";
+    }
+    else if (filetype == "tiff" || filetype == "tif")
+    {
+        device = "tiff24nc"; // Uncompressed 24-bit TIFF
+        if (filetype == "tif") output_file = "document.tif";
+    }
+    else if (filetype == "bmp")
+    {
+        device = "bmp16m";  // 24-bit BMP
+    }
+    else if (filetype == "ps")
+    {
+        device = "pswrite"; // PostScript
+    }
+    else if (filetype == "eps")
+    {
+        device = "epswrite"; // Encapsulated PostScript
+    }
+    else if (filetype == "pdf")
+    {
+        // PDF to PDF copy - just copy the file
+        cout << "Copying PDF file" << endl;
+        command = "copy " + input_file + " " + output_file;
+        system(command.c_str());
+        return 0;
+    }
+    else
+    {
+        cout << "Unsupported file type for export: " << filetype << endl;
+        cout << "Supported formats: png, jpeg/jpg, tiff/tif, bmp, ps, eps, pdf" << endl;
+        return 1;
+    }
+    
+    // For image formats, use Ghostscript with the specified DPI
+    if (filetype != "pdf") {
+        command = "gswin64.exe -sDEVICE=" + device + 
+                  " -dTextAlphaBits=4 -dGraphicsAlphaBits=4" +
+                  " -r" + to_string(dpi) + 
+                  " -o " + output_file + 
+                  " " + input_file;
+    }
+    
+    // Execute the command
+    int result = system(command.c_str());
+    
+    if (result == 0)
+    {
+        cout << "Successfully exported to " << output_file << endl;
+    }
+    else
+    {
+        cout << "Export failed" << endl;
+        return 1;
+    }
+    
+    return 0;
+}
+
 // Automata layout functions - forward declarations only
