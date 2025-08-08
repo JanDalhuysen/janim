@@ -36,6 +36,8 @@ string janim_text_color = "white";
 
 string janim_main_font = "CascadiaMono.ttf";
 
+bool janim_page_numbering = false; // New variable to control page numbering
+
 int janim_print_version()
 {
     cout << janim_version << endl;
@@ -141,6 +143,12 @@ int janim_set_author(string author)
     return 0;
 }
 
+int janim_set_page_numbering(bool enable)
+{
+    janim_page_numbering = enable;
+    return 0;
+}
+
 #pragma endregion
 
 int janim_create_document()
@@ -183,7 +191,12 @@ int janim_create_document()
     document << "\\usepackage{fontspec}" << endl;
     document << "\\usepackage{xcolor}" << endl;
     document << "\\setmainfont{" << janim_main_font << "}" << endl;
-    document << "\\pagenumbering{gobble}" << endl;
+    
+    if (!janim_page_numbering)
+    {
+        document << "\\pagenumbering{gobble}" << endl;
+    }
+    
     document << "\\pagecolor{" << janim_page_color << "}" << endl;
     document << "\\hyphenpenalty 10000" << endl;
     document << "\\exhyphenpenalty 10000" << endl;
